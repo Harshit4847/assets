@@ -37,7 +37,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
             });
         });
 
-const form = document.getElementById('contact-form');
+const form = document.getElementById('form');
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
@@ -56,24 +56,28 @@ const form = document.getElementById('contact-form');
       alert('Form submitted successfully!');
     });
 
-// filepath: /C:/Users/admin/Desktop/assets/js/js.js
-const toggleSwitch = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme');
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+});
 
-if (currentTheme) {
-    document.body.classList.add(currentTheme);
+sections.forEach(section => observer.observe(section));
 
-    if (currentTheme === 'dark-mode') {
-        toggleSwitch.checked = true;
-    }
+const toggleButton = document.getElementById('theme-toggle');
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+function openModal(id) {
+    document.getElementById(id).style.display = 'block';
 }
 
-toggleSwitch.addEventListener('change', function() {
-    if (this.checked) {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light-mode');
-    }
-});    
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+    

@@ -1,66 +1,4 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
 
-body.dark-mode {
-    background-color: #333;
-    color: #f4f4f4;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.toggle {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    background-color: #ccc;
-    border-radius: 16px;
-}
-
-.toggle-input {
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    border-radius: 16px;
-    transition: .4s;
-}
-
-.toggle-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: .4s;
-}
-
-.toggle-input:checked + .slider:before {
-    transform: translateX(26px);
-}
 
 header {
     background-color: #333;
@@ -132,3 +70,59 @@ p {
     padding: 10px 0;
 }
 
+
+section {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.modal-content {
+    text-align: center;
+}

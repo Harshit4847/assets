@@ -6,14 +6,9 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="css\style.css">
 </head>
-<body>
+<body background="images\background.jpg">
 
-    <div class="container">
-        <label class="toggle">
-            <input type="checkbox" class="toggle-input" id="theme-toggle">
-            <span class="slider"></span>
-        </label>
-    </div>
+    
     
     <header>
         <h1>Welcome to My Portfolio</h1>
@@ -23,7 +18,9 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
-    
+
+    <button id="theme-toggle">Toggle Dark Mode</button>
+
     <section id="about">
         <h2>About Me</h2>
         <p>Hello! My name is Harshit yadav, and I am an aspiring cybersecurity specialist currently pursuing a Bachelor of Computer Applications (BCA) with a specialization in cybersecurity. I have a strong passion for technology, problem-solving, and understanding how systems work, which drives me to explore the intricate world of cybersecurity and ethical hacking.<br><br>
@@ -32,6 +29,7 @@
             
             Beyond my academic pursuits, I am keen on working on real-world projects and participating in hackathons to hone my skills further. My journey is fueled by curiosity, dedication, and a vision to create a secure digital environment for everyone.</p>
     </section>
+
 
     <section id="projects">
         <h2>Key Projects</h2>
@@ -58,6 +56,25 @@
                 </ul>
             </li>
         </ol>
+
+        <div class="project-card">
+            <img src="images\project-image.jpg" alt="Project Thumbnail" height="200">
+            <h3>Vulnerability Scanner</h3>
+            <p>A tool that scans a network or system for security weaknesses and produces a report that provides details on the vulnerabilities found.</p>
+            <a href="project-link" target="_blank">View Project</a>
+        </div>
+
+        <!-- Modal Trigger -->
+        <button onclick="openModal('project1')">View Details</button>
+
+        <!-- Modal Structure -->
+        <div id="project1" class="modal">
+            <div class="modal-content">
+                <h3>Project Title</h3>
+                <p>Detailed description about the project, its challenges, and solutions.</p>
+                <button onclick="closeModal('project1')">Close</button>
+            </div>
+        </div> 
     </section>
 
     <section id="skills">
@@ -87,6 +104,16 @@
         
     </section>
 
+    <section id="blog">
+        <h2>My Blog</h2>
+        <div class="blog-post">
+            <h3>Title of Blog Post</h3>
+            <p>Excerpt of the blog post...</p>
+            <a href="blog-post-link.html">Read More</a>
+        </div>
+    </section>
+    
+
     <section id = "form">
 
         <h2>Contact Form</h2>
@@ -102,6 +129,19 @@
         </form>
 
     </section>
+ 
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-card">
+            <p>"[Your Name] is an excellent developer with a great eye for detail!"</p>
+            <h4>- John Doe, Mentor</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"Working with [Your Name] was a fantastic experience."</p>
+            <h4>- Jane Smith, Team Member</h4>
+        </div>
+    </section>
+    
 
     <section id="contact">
         <h2>Connect with Me</h2>
