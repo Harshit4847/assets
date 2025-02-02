@@ -39,3 +39,4 @@ To use or customize this CV:
 
 This project is open-source and available under the [MIT License](LICENSE).
 https://roadmap.sh/projects/single-page-cv
+https://roadmap.sh/projects/basic-html-website
